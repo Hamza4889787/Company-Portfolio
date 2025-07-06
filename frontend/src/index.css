@@ -1,0 +1,164 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system inspired by the reference portfolio */
+
+@layer base {
+  :root {
+    --background: 48 46% 95%;
+    --foreground: 30 25% 15%;
+
+    --card: 48 46% 97%;
+    --card-foreground: 30 25% 15%;
+
+    --popover: 48 46% 97%;
+    --popover-foreground: 30 25% 15%;
+
+    --primary: 30 25% 15%;
+    --primary-foreground: 48 46% 95%;
+
+    --secondary: 42 45% 85%;
+    --secondary-foreground: 30 25% 15%;
+
+    --muted: 42 35% 88%;
+    --muted-foreground: 30 15% 45%;
+
+    --accent: 35 40% 80%;
+    --accent-foreground: 30 25% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 42 35% 85%;
+    --input: 42 35% 85%;
+    --ring: 30 25% 15%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 48 46% 95%;
+    --sidebar-foreground: 30 25% 15%;
+    --sidebar-primary: 30 25% 15%;
+    --sidebar-primary-foreground: 48 46% 95%;
+    --sidebar-accent: 42 35% 88%;
+    --sidebar-accent-foreground: 30 25% 15%;
+    --sidebar-border: 42 35% 85%;
+    --sidebar-ring: 30 25% 15%;
+  }
+
+  .dark {
+    --background: 30 25% 8%;
+    --foreground: 48 46% 95%;
+
+    --card: 30 25% 10%;
+    --card-foreground: 48 46% 95%;
+
+    --popover: 30 25% 10%;
+    --popover-foreground: 48 46% 95%;
+
+    --primary: 48 46% 95%;
+    --primary-foreground: 30 25% 8%;
+
+    --secondary: 30 15% 20%;
+    --secondary-foreground: 48 46% 95%;
+
+    --muted: 30 15% 20%;
+    --muted-foreground: 42 35% 65%;
+
+    --accent: 30 15% 20%;
+    --accent-foreground: 48 46% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 20%;
+    --input: 30 15% 20%;
+    --ring: 48 46% 85%;
+    --sidebar-background: 30 25% 8%;
+    --sidebar-foreground: 48 46% 95%;
+    --sidebar-primary: 48 46% 95%;
+    --sidebar-primary-foreground: 30 25% 8%;
+    --sidebar-accent: 30 15% 20%;
+    --sidebar-accent-foreground: 48 46% 95%;
+    --sidebar-border: 30 15% 20%;
+    --sidebar-ring: 48 46% 85%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    line-height: 1.6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom classes for the portfolio */
+.hero-gradient {
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--accent)) 100%);
+}
+
+.section-title {
+  @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 lg:mb-8;
+}
+
+.section-subtitle {
+  @apply text-base sm:text-lg lg:text-xl text-muted-foreground mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed;
+}
+
+/* Responsive container improvements */
+.container {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Smooth animations for counters */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-count-up {
+  animation: countUp 0.6s ease-out;
+}
+
+/* Responsive text scaling */
+@media (max-width: 640px) {
+  .section-title {
+    @apply text-2xl;
+  }
+  
+  .section-subtitle {
+    @apply text-sm;
+  }
+}
+
+/* Better mobile spacing */
+@media (max-width: 768px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+/* Improved card hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+}
