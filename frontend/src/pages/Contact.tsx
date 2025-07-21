@@ -99,17 +99,17 @@ const Contact = () => {
   const contactInfo = [
     {
       title: "Email",
-      value: "hello@portfolio.com",
+      value: "ha4889787@gmail.com",
       description: "Send us an email anytime",
     },
     {
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+923054365091",
       description: "Call us during business hours",
     },
     {
       title: "Location",
-      value: "New York, NY",
+      value: "Pakistan",
       description: "Come visit our office",
     },
   ];
